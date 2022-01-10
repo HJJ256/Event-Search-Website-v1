@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="static/main.js"></script>
+        <link rel="stylesheet" href="static/main.css">
+        <title>HW6</title>
+    </head>
+    <body onload="geosearch()">
+        <div style="background-color: #FAFAFA; border: 2px solid #CCCCCC; margin-left: 30%;margin-right: 30%;padding: 5px; padding-bottom: 15px;">
+            <h1 style="text-align: center; font-style: italic;margin-bottom: 0;">Events Search</h1>
+            <hr>
+            <form id='search_form' onsubmit="getEvents(); return false">
+                <label for="keyword" style="font-weight: 700;">Keyword</label>
+                <input type="text" id="keyword" name='keyword' required><br>
+                <label for="category" style="font-weight: 700;">Category</label>
+                <select id='category' name='category'>
+                    <option value=''>Default</option>
+                    <option value='KZFzniwnSyZfZ7v7nJ'>Music</option>
+                    <option value='KZFzniwnSyZfZ7v7nE'>Sports</option>
+                    <option value='KZFzniwnSyZfZ7v7na'>Arts & Theatre</option>
+                    <option value='KZFzniwnSyZfZ7v7nn'>Film</option>
+                    <option value='KZFzniwnSyZfZ7v7n1'>Miscellaneous</option>
+                </select>
+                <br>
+                <label for="distance" style="font-weight: 700;">Distance (miles)</label>
+                <input type="number" id='distance' name='distance' placeholder="10">
+                <label style="font-weight: 700;"> from </label>
+                <input type="radio" id='Here' name='location' value='Here' onclick="EnableDisableTextBox()" checked>
+                <label for='Here'>Here</label><br>
+                <input type="radio" id='loc' name='location' value='loc' style="margin-left: 45%;" onclick="EnableDisableTextBox()">
+                <input type="text" id='txtloc' name='txtloc' placeholder="location" required disabled>
+                <br>
+                <button type="submit" id="submit" style="margin-top: 5px;margin-left: 60px;" disabled>Search</button>
+                <button type="button" onclick="resetForm()">Clear</button>
+            </form>
+        </div>
+        <br>
+        <div id="search_table" style="margin-left: 15%;margin-right: 15%;justify-content: center;display: flex;"></div>
+        <div id="detail_section" style="margin-left: 15%;margin-right: 15%; display: grid; grid-template-columns: auto auto; column-gap: 20px;"></div>
+    </body>
+</html>
